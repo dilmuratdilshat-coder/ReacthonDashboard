@@ -10,8 +10,10 @@ import streamlit as st
 import os
 import sys
 
-# Добавляем текущую директорию в путь
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Меняем рабочую директорию на директорию файла и добавляем в путь
+app_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(app_dir)
+sys.path.insert(0, app_dir)
 
 from data_service import get_data_service
 from components.monitor import render_monitor
